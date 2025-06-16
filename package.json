@@ -1,0 +1,18 @@
+{
+  "name": "belajar-materi-unit-test",
+  "version": "1.0.0",
+  "main": "./srs/index.mjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Rafa Khadafi",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "devDependencies": {
+    "@babel/preset-env": "^7.27.2",
+    "@types/jest": "^29.5.14",
+    "babel-jest": "^30.0.0",
+    "jest": "^30.0.0"
+  }
+}

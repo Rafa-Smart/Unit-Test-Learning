@@ -1,0 +1,74 @@
+konfigurasi konfigurasi pada jest
+
+jadi ada dua cara untuk melakukan konfigurasi pada jest yaitu
+
+1.
+pada package.json bagian jest 
+"jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  }
+
+2. kita membuat file jest.config.js/.mjs/.ts 
+nah bisa menambahkanya diterminal, nahh karena file jest ini ada didalam folder node_modules/.bin/ maka kita gunakan perintah npx
+
+npx create-jest
+
+
+dan jangan lupa untuk memindahkan file tersebut ke root projectnya, dan juga sudah tidak ada lagi config jest di package.json
+
+nnti di file jest.config.json di baris ke 179 itu adalah tranformnya, jadi yang di package.json, dipundahkan kesitu
+
+sebenearnya semua konfigurasi nya sudah ada semua,tapi cuma tinggal di uncomment saja dan ubah valuenya
+
+
+dan untuk menambahkannya itu hanya ada key dan valuenya saja
+
+https://jestjs.io/docs/configuration
+
+verbose: true, => agar terlihat detail hasilnya
+
+lagiiii
+
+cli untuk jest
+dengna cara npx jest --help
+
+yang berguna itu adalah --coverage
+
+nah jika kamu menjalankan npx jest, maka secara default, akna menjalankan seluruh test yang ada pada semua file
+
+dan jika hanya ingin menjalankan 1 file saja maka dengna cara menambahkan 
+npx jest --runTestsByPath namaFilenya -> (test/1.sum.test.js)
+
+
+atau kita hanya ingin menjalankan 1 test saja, maka kita bisa menggunakan
+npx jest --testNamePattern namaTestnya -> "sum(1, 2) -> 3" atau
+npx jest --t namaTestnya -> "sum(1, 2) -> 3"
+dan nama fucntionnya harus sama besar kecilnya
+
+dan kalo ini harus di pake \(
+npx jest --testNamePattern "sum\(1, 2\) is 3"
+
+
+
+atau kalo mau bisa juga nanti di test
+maka nant hanya ini saja yg akan dieksekusi ketika
+npx jest dalam file tersebut
+test.only("sum(1, 2) is 3", () => {
+    const result = sum(1, 2);
+    expect(result).toBe(3);
+});
+
+
+
+============================
+Test Suites: 2 passed, 2 total => total file berhasil
+Tests:       3 skipped, 3 passed, 6 total => total test
+Snapshots:   0 total
+Time:        1.017 s
+
+
+
+agar bisa auto complete harus download ini
+npm install --save-dev @types/jest

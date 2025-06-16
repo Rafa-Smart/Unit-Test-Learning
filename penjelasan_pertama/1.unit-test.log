@@ -1,0 +1,29 @@
+jdai testing pada sebuah aplikasi itu ada 3 yaitu 
+1. ui test (end to end test) -> jadi dari awal aplikasi sampai akhir aplikasi kita test (dijalankan semuanya bagiannya backend,frontend,dll) (harga mahal dan lambat)
+2. service test -> hanya mengetes bagian misal backendnya saja atau frontendnya saja -> sedang dan sedang
+3. unit test -> hanya mengetes sebagian kecil dari program misal function, class, dll -> murah dan cepat
+
+
+untuk menjalankan unit test, lihat di folder node_modules, ada bin, lalu ada jest,
+nah jest ini lah yang akan kita eksekusi yang berisi binary nya
+perintahnya di terminal adalah node_modules/.bin/jest
+
+atau kita juga bisa menggunakan perintah istimewa di scripts
+disini kita menggunkan keyword test
+  "scripts": {
+    "test": "jest"
+  }, jadi nanit tinggal npm test
+
+  jadi nanti dia juga akna mencari jest yang ad adi bin yang ada di node_modules
+
+
+nah didalam npm itu juga ada npx
+
+jadi npx in digunakan spesial untuk menjalankan perintah yang bisa secara otomatis mendeteksi file yang terdapat di node_modules/.bin, jadi kita bisa otomatis menjalankan npx jest sja jadi ga perlu pake npm
+karena nanti bisa membuat banyak scripts yang dibuat (kalo misalkan nanti sudah banyak
+
+
+nah untuk file testingnya, kita perlu konfigurasi nama filenya yaitu dengan extension namaFile.test.js
+
+
+3.

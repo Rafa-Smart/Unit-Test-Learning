@@ -1,0 +1,51 @@
+kekurnagna jest pada saat ini adalah masih menggunakan kdoe common js yaitu yg masih menggunakan require function untuk import modulnya
+
+oleh karena itu kita membutuhkan babel untuk mengubah kode js kita menjadi es6 agar bisa menggunakan import dan export functionnya
+
+didalam jest mendukung code transformation yaitu sebuah fitur yg dimana kita bisa melakukan perubahan kode program sebelum dijalankan ke kode program yag lain, misal kita punya kode program es6 nah kita inign mengubah kode ini menjadi common js agar bisa di pakai di misal browser lama yg belum mendukung kode es6
+
+jadi babel ini bisa melakukan compilasi js ke kdoe yang dipahami oleh si jestnya
+
+1.
+caranya adalah npm install --save-dev babel-jest
+
+2.
+dan di package.json nya kita tambahkan config
+  "devDependencies": {
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.0",
+    "jest": "^30.0.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  }
+  Saat Jest melihat file .js, dia akan memanggil Babel (jika dikonfigurasi) untuk melakukan transformasi. Tanpa preset yang benar, transformasi ini gagal atau tidak lengkap.
+
+jadi maksudnya adlah semua kode untuk js,ts,jsx, dll, akan di compile menggunakan babel-jest
+
+3. dan install juga npm install @babel/preset-env --save-dev
+
+4.
+dan juga tambahkan file babel.config.json dan didalam file tersebut ditambahkan 
+{
+    "presets": ["@babel/preset-env"]
+} 
+jadi maksudnya adalah memberi tahu jika nanti babelnya melakukan compilasi, maa ingin di compilasinya menggunakan preset yang mana, yaitu yang preset-env 
+
+https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.42&spec=false&loose=false&code_lz=JYWwDg9gTgLgBAbwM4FcQF84DMoRHAIgDoiB6JKAY3LQIFgAoRmAUyRgAoDUQOBGADRwATAEo4wJHADMBIR3EBeAHyJGcDXEoQAduzhQ2KADbxFcHvyFiA3I3WbSpOACsAhgBNgcANbAYbnAsAB5gLJQBSN4ARm4AFgDugTrAxm7ehqimEjAocJ5uaXEyDhohYREcmSYwokQwEABCLBzSonYM6KJAA&forceAllTransforms=false&modules=commonjs&shippedProposals=false&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Cstage-2&prettier=false&targets=&version=7.27.6&externalPlugins=&assumptions=%7B%7D
+
+
+ atau coba cara yang ada di dokumentasinya
+https://babeljs.io/setup#installation yang bagian jest yaaaaa
+
+
+Jest secara default hanya bisa mengeksekusi JavaScript yang sudah dikenal oleh Node.js.
+Jika kamu menulis kode dengan:
+
+const func = () => {
+  const [a, b] = [1, 2];
+  return { a, b };
+};
+Tanpa @babel/preset-env, Jest akan gagal menjalankan pengujian karena sintaksis seperti fungsi panah, destrukturisasi, singkatan objek mungkin tidak dikenal oleh lingkungan Node.js yang digunakan Jest.
