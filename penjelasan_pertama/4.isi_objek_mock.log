@@ -1,0 +1,36 @@
+{
+
+  calls: Array<Array<any>>, -> 	Array 2 dimensi: Setiap elemen berisi
+                                array argumen saat fungsi dipanggil.
+                                Contoh: calls[0] adalah argumen pada pemanggilan pertama.
+
+  instances: Array<any>,    -> 	this context dari tiap pemanggilan 
+                                fungsi. Berguna kalau fungsi dipanggil pakai new atau pakai bind/apply.
+
+
+
+  results: Array<{ type: "return" | "throw" | "incomplete", value: any }>,  -> Daftar hasil
+                                        dari tiap pemanggilan: apakah return, throw, atau incomplete.
+                                        Contoh: { type: "return", value: 42 }
+
+
+
+
+  invocationCallOrder: Array<number>, -> Urutan global kapan fungsi dipanggil dibanding
+                                     fungsi mock lain. Cocok kalau kamu punya banyak mock dan ingin tahu siapa dipanggil duluan.
+
+
+  lastCall: Array<any> | undefined,
+  context: Array<any>,
+
+  // opsional internal Jest (advanced)
+  clear: Function,
+  reset: Function,
+  restore: Function,
+  name: string
+}
+
+https://chatgpt.com/c/6851499e-5594-8009-858f-9e4d35ee15fe
+
+
+ fungsi-fungsi manipulasi mock behavior di Jest
