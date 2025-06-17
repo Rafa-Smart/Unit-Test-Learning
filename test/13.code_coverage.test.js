@@ -42,6 +42,8 @@ test("testing alur 2...", () => {
 
 
 
+// 2. coverageThreshold
+
 // atau kita juga bisa memastikan persen dari coveragenya
 // jadi kalo misalkan coveragenya dibawah yang kita mau maka akan gagal seluruh testing unit testnya
 //   coverageThreshold: undefined,
@@ -54,7 +56,7 @@ test("testing alur 2...", () => {
 
 // coverageThreshold: {
 //     global: {
-//       branches: 80, // alur program (if else)
+//       branches: 80, // alur program (if else), jadi alur ketika ifm dan alur ketika else
 //       functions: 80, // fungsi
 //       lines: 80, // baris
 //       statements: -10, // statement
@@ -63,3 +65,27 @@ test("testing alur 2...", () => {
 
 
 // jadi itu minimal 80, dan kalo kurang, maka akan gagal testingnya
+
+
+// 3. collectCoverageFrom
+// terkadang ketika kita sudah besar membuat aplikasinya maka kita hanya inign emngambil bagian kode mana yang inign di test atau di hitung code coveragenya (jadi ga semua)
+
+// https://jestjs.io/docs/configuration#collectcoveragefrom-array
+
+// collectCoverageFrom: [
+//     '**/*.{js,jsx}', // jadi disemua folder/dan disemua file
+//     '!**/node_modules/**', // jadi tidak diambil dari node_modules tapi di semua file
+//     '!**/vendor/**', // jadi tidak diambil dari vendor tapi di semua file
+
+    // dan lain lain
+
+//   ],
+
+// dengna catatan PENTING !!!
+// jika ingin menggunakan ini mka harus juga menggunakan --coverage, atau collectCoveragenya di true kan
+
+// dan ini itu akan di cek di file yang berada di source / file asli kita
+
+// jadi buat ngetes, seberapa bagus ita meng cover code pada file asli kita
+
+// lihat di line 24

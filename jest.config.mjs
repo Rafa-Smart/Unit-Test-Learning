@@ -21,7 +21,19 @@ const config = {
   // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: undefined,
+
+
+
+  // collectCoverageFrom: [ // ini juga kita matikan saja 
+
+  // //   // '**/*.{js,jsx}', // jadi semua file js dan jsx akan dihitung
+
+  // //   // saya hanya ingin mengecek code coverage pada folder src saja 
+  //   'src/**',
+  //   'src/**/*.{js,jsx}', // hanya yang extensi js saja / jsx
+  //   '!**/node_modules/**',
+  //   '!**/vendor/**', // saya ga mau dari vendor
+  // ],
 
   // The directory where Jest should output its coverage files
   // coverageDirectory: undefined,
@@ -43,14 +55,14 @@ const config = {
   // ],
 
   // An object that configures minimum threshold enforcement for coverage results
-coverageThreshold: {
-    global: {
-      branches: 80,
-      functions: 80,
-      lines: 80,
-      statements: -10,
-    },
-  },
+// coverageThreshold: { // ini kita matikan aja
+//     global: {
+//       branches: 80,
+//       functions: 80,
+//       lines: 80,
+//       statements: -10,
+//     },
+//   },
 
   // A path to a custom dependency extractor
   // dependencyExtractor: undefined,

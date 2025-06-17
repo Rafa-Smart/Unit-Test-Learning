@@ -19,6 +19,9 @@ test("test toEqual", () => {
 
 let dataTes = Array.from({ length: 10 }, (_, x) => x+1)
 
+const result = Array.from([1, 2, 3], (v, i) => v * 2);
+console.log(result); // [2, 4, 6]
+
 
 // ilmu baru
 // jadi kita bisa buat array dengna mudah menggunakan ini
@@ -38,3 +41,30 @@ let dataTes = Array.from({ length: 10 }, (_, x) => x+1)
 
 // bisa juga seprti Ini 
 let data2 = Array.from({ length: 10 }, (_, x) => String.fromCharCode(97 + x)); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+const doubler = {
+  factor: 2,
+  multiply(value) {
+    return value * this.factor;
+  }
+};
+
+const arr = Array.from([1, 2, 3], function (value, index) {
+  return this.multiply(value); // jadi v disini adalah setiap elemen yang ad pada array [1,2,3]
+}, doubler);
+
+console.log(arr); // [2, 4, 6]
+
+// kalo yang sebelumnya valuenya itu di kosongkan
+
+
+// jadi di dalam fungsi  Array,from()
+// nah di paramter terahir itu ada thisArg?: any
+
+// jadi fungsinya adalah untuk menggunakan this pada objek itu
+// jadi Berguna jika kamu ingin mengakses this tertentu dalam callback function.
+
+// jadi pada fungsi callback yang ada pada paramter kedua
+// itu dia menggunakan this.multiply yang artinya dia menggunakan this dari suatu objek
+
+// ah objeknya itu di masukan ke dalam paramter ke tiga pada fungsi Array.from()

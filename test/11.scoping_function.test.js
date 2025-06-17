@@ -20,14 +20,17 @@
 // maka akan dijalankan di semua fungsi describe yang ada di dalam file tersebut
 
 
+
 // kelompok pertama
 describe("Operasi Matematika", () => {
   test("Penjumlahan", () => {
     expect(1 + 2).toBe(3);
+    console.log("testing 1")
   });
-
+  
   test("Pengurangan", () => {
     expect(5 - 2).toBe(3);
+    console.log("testing 2")
   });
 });
 
@@ -39,6 +42,10 @@ describe("User Management", () => {
   beforeEach(() => {
     user = { name: "Rafa", role: "admin" };
   });
+
+  afterEach(() => {
+    user = null
+  })
 
   test("user punya nama", () => {
     expect(user.name).toBe("Rafa");

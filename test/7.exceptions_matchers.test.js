@@ -101,5 +101,7 @@ test("testing biodata 2 ...", () => {
 
 
 
-
+test("testing 3...", () => {
+  expect(() => testing()).toThrow(Error)
+})
 

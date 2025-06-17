@@ -13,13 +13,13 @@ beforeAll(() => {
   // Simulasi buka koneksi
 //   disini untuk semua test, kita akn konekin dulu ke database
   db = { connected: true, data: [] };
-  console.log("🔌 Connect ke database (sekali saja)");
+  console.log("Connect ke database (sekali saja)");
 });
 
 afterAll(() => {
   // Simulasi tutup koneksi, dan ketika semua test selesai, maka putuskan lagi koneksinya dari database
   db = null;
-  console.log("❌ Disconnect database (sekali saja)");
+  console.log("Disconnect database (sekali saja)");
 });
 
 test("Database terhubung", () => {
