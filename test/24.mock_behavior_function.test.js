@@ -81,7 +81,9 @@ describe("2. mock promise...", () => {
 });
 
 describe("3. test promise asli mock...", () => {
-  function ambilData(nama) {
+
+
+  function ambilDataNih(nama) {
     return new Promise((resolve, rejected) => {
       if (nama) {
         resolve("haloo " + nama);
@@ -91,24 +93,36 @@ describe("3. test promise asli mock...", () => {
     });
   }
 
+
   function sapaUser(nama, ambilData) {
     return ambilData(nama)
       .then((res) => `Berhasil: ${res}`)
-      .catch((err) => `Gagal: ${err}`);
   }
 
+  
   //   nah jadi disini kita akn membuat mock fungsi dari si ambil data agar tidak beneran ngambil data ke api
 
   test("testing resolved yg asli", () => {
     const ambilDataMock = jest
       .fn()
-      .mockImplementationOnce((nama) => Promise.resolve(`haloo ${nama}`));
+      .mockImplementation((nama) => {
+        if(nama){
+          return Promise.resolve(`haloo ${nama}`)
+        } else {
+          return Promise.reject('ini isinya error')
+        }
+      });
 
     // ah jadi ini tuh ktia buat mock fungsi yang berfungsi untuk mengambil dat nama dari sapaUser(), lalu dengan nama tersebut kita simulasikan bahwa kita telah mengmbil data dari api
 
     expect(sapaUser("rafa", ambilDataMock)).resolves.toBe(
       "Berhasil: haloo rafa"
     );
+
+    // ini kalo gagal
+    expect(sapaUser("", ambilDataMock)).rejects.toBe("ini isinya error")
+
+
   });
 });
 

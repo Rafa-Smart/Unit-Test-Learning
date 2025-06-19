@@ -14,7 +14,7 @@ describe("testing untuk failing...", () => {
     // atau mau seperti ini
 
     test("test 2", () => {
-        expect(math("sengaja salah", 4, 5)).toThrow() // ini bisa
+        expect(() => math("sengaja salah", 4, 5)).toThrow() // ini bisa
     })
 
 

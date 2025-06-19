@@ -112,6 +112,10 @@ test("testing calculate 1...", () => {
   // nah informasi mock functionnya itu kita bisa pake
   // lihat di folder penjelasan
 
+  // jadi yang ada di calculate itukan 30 nah nanti dimasukan ke mock function callback itu
+  // lalu dibawah ini dites si callback mocknya, apakah benar pernah di panggil dnegna 30
+
+
   expect(callback.mock.calls[0][0]).toBe(30);
   expect(callback.mock.calls[1][0]).toBe(50);
   // nah jadi di calls[0][0], di [0] pertama itu maksudnya adalah

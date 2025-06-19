@@ -1,5 +1,8 @@
 // mengeksport fungsi untuk percabangan
+
 console.clear()
+
+
 import math from "../src/3.math";
 
 test("testing alur 1...", () => {
@@ -89,3 +92,13 @@ test("testing alur 2...", () => {
 // jadi buat ngetes, seberapa bagus ita meng cover code pada file asli kita
 
 // lihat di line 24
+
+
+
+// atau bisa juga di tampilkan ke file
+// dengna cara 
+// npx jest --coverage > hasil-coverage.txt 2>&1
+
+// 2>&1 = untuk emnampilkan error juga
+
+// npx jest runTestsByPath .\test\13.code_coverage.test.js --coverage > hasil-testing.log 2>&1

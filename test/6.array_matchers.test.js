@@ -39,3 +39,12 @@ test('apakah ada milk pada pembelian', () => {
 
 // tapi kalo toContainEqual itu berati mengece sampai dalam apakah item ini ada pada array itu
 // atau tidak seberti mengecek item objek ini apakah ada
+
+
+
+// atau bisa juga seprti ini
+test("testing string...", () => {
+  let string = "rafa khadafi";
+
+  expect(string).toContain("afa")
+})

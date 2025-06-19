@@ -53,12 +53,15 @@ jest.mock("../src/5.database.js", () => {
 test("testing mock module", () => {
   // disini kita akna buat implementasinya dari si function yg ada pda module tersebut (kita ubah isinya)
 
-  getProductById.mockImplementation((id) => {
-    return {
-      id,
-      name: "Arduino Uno R3",
-    };
-  });
+
+  // ini ga bisa karena belum kita mock ;
+
+  // getProductById.mockImplementation((id) => {
+  //   return {
+  //     id,
+  //     name: "Arduino Uno R3",
+  //   };
+  // });
 
   getAllProducts.mockImplementation(() => {
     return [

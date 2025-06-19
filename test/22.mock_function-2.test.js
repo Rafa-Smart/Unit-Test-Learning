@@ -9,6 +9,12 @@ const mockCallback = jest.fn(x => 10 + x); // ini sama kayak implementation
 test('forEach mock function', () => {
   forEach([1,2,3], mockCallback);
 
+  // jadi forEach ini setiap item yg di iterasi maka akn memanggil si mockcallbacknya
+  // misal iterasi pertama mockcallback(1)
+  // misal iterasi kedua mockcallback(2)
+  // misal iterasi ketiga mockcallback(3)
+
+
     // ngecek kalo callback ini sudah di panggil sebanyak 3 kali,
     // karena pemanggilan di for loopnya
   expect(mockCallback.mock.calls).toHaveLength(3);
