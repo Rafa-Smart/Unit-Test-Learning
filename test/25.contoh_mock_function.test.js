@@ -3,9 +3,12 @@ console.clear();
 describe("1. fecth data dari api", () => {
   async function ambilData(fecth, id) {
     if (!id) {
-      return Promise.reject("id tidak ada!!!");
+      return await Promise.reject("id tidak ada!!!");
     } else {
       let response = await fecth(`https://api.example.com/users/${id}`);
+      // jadinya nanit ketika sudah di mock
+      
+      // let response = await mockFecth(`https://api.example.com/users/${id}`);
       return response.json();
     }
   }
@@ -69,7 +72,8 @@ describe("2. testing hitung angka easy", () => {
 // conoth lagi
 
 describe("3. testing kirim pesan", () => {
-  function kirimEmail(service, penerima, pesan) {
+  function kirimEmail(service, penerima, pesan) { // disini fungis yg pengen kita mock itu si service
+    // makanya ada di callback
     if (!penerima.includes("@")) throw new Error("Email tidak valid");
     service.send(penerima, pesan);
   }

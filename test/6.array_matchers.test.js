@@ -40,6 +40,9 @@ test('apakah ada milk pada pembelian', () => {
 // tapi kalo toContainEqual itu berati mengece sampai dalam apakah item ini ada pada array itu
 // atau tidak seberti mengecek item objek ini apakah ada
 
+// toContain itu hanya bisa untuk yg bisa di iterable / yg bisa di ulang atau di looping
+// kayak string , aray, tapi klao objek biasa ga bisa di iterable
+
 
 
 // atau bisa juga seprti ini

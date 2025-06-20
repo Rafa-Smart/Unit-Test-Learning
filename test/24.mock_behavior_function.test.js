@@ -105,7 +105,8 @@ describe("3. test promise asli mock...", () => {
   test("testing resolved yg asli", () => {
     const ambilDataMock = jest
       .fn()
-      .mockImplementation((nama) => {
+      .mockImplementation((nama) => { // disini kita buat lagi fungis dari si almbiData -> jdi 
+        // sebenernya kita ga buatuh fungis aslinya
         if(nama){
           return Promise.resolve(`haloo ${nama}`)
         } else {
@@ -137,15 +138,16 @@ describe("4. kasus nyata penggunaan mock...", () => {
   // nah disini itu sebenarnya kita kalo mau oake mock
   // kita harus pake callback agar nanti bisa di mock callbacknya
 
-  function tampilkanUser(email, ambilUserFn) {
+  async function tampilkanUser(email, ambilUserFn) { // ini sengaja kita kasih nama fungis yg pegen di mock ke callback agar bisa di manupilasi
     if (email) {
       if (isEmail(email)) {
-        return ambilUserFn(email).then((data) => `Email pengguna: ${data.email}`); // dari si mockResolvedValueOnce
+        return await ambilUserFn(email).then((data) => `Email pengguna: ${data.email}`); // dari si mockResolvedValueOnce
       } else {
-        return Promise.reject("email tidak valid");
+        return await Promise.reject("email tidak valid");
       }
     } else {
-      return Promise.reject("email tidak boleh kosong");
+      return await Promise.reject("email tidak boleh kosong");
+      // disini juga ga perlu pake await, karena dibawah sudah kita reject di bagian expectnhya
     }
   }
 
@@ -181,3 +183,11 @@ describe("4. kasus nyata penggunaan mock...", () => {
 
 
 
+// jadi ketika kita inign menipulasi sebauh fungsi yg ada di fungis laiin, maka fungis yg mau di mock itu harus
+// kita panggil di callback, jadi nanti gampang buat kita mock
+
+
+// PENTINGGGG
+
+// jadi inget then itu adalah hasil dari resolve
+// dan catch itu adalaah hasil dari si rejectd

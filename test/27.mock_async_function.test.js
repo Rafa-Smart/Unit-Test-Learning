@@ -43,6 +43,9 @@ test("test async rejected..", () => {
 
   expect(getData("Jamal", from)).rejects.toBe("Ups error...");
   // jadi ini tuh udah di try cacth kan lihat aja di filenya data async
+  
+  // atau mungkin bisa juga seprti ini
+  // expect(getData("Jamal", from)).rejects.toEqual(new Error("Ups error..."));
 
 });
 

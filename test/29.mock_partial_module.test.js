@@ -3,6 +3,8 @@
 
 import { getAllProducts, getProductById } from "../src/5.database";
 
+import { ProductController } from "../src/6.products-services";
+
 // dan terkadnag kita hanya inngin memocking sebagian saja
 // caranya dengan jest.requireActual(module)
 
