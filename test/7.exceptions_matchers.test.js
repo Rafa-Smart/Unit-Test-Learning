@@ -82,6 +82,8 @@ test("testing biodata...", () => {
 test("testing biodata 2 ...", () => {
   try {
     testing(); // tanpa nama, jadi error
+    // dan ini ga perlu di maskan duu ke dalam fungis lain
+    // karenakita sengaa ingin menangkap erronya
   } catch (err) { // nah jadi ini tuh yang di cek objek errornya
     expect(err).toBeInstanceOf(Exceptions);
     expect(err.message).toBe("tidak mengisi biodata");

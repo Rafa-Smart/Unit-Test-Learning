@@ -8,6 +8,8 @@ describe("1. fecth data dari api", () => {
       let response = await fecth(`https://api.example.com/users/${id}`);
       // jadinya nanit ketika sudah di mock
       
+      // ingat yg diganti itu hanya fungisnya saja
+      // paramter / then/catchnya tetap dari fugnsi aslinya
       // let response = await mockFecth(`https://api.example.com/users/${id}`);
       return response.json();
     }

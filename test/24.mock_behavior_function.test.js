@@ -96,6 +96,9 @@ describe("3. test promise asli mock...", () => {
 
   function sapaUser(nama, ambilData) {
     return ambilData(nama)
+    // nah jadi kan fungsi ambildata ini sudah di mock
+    // lalu ketika di mock maka akan di then disini
+    // ingat yg di mock itu hanya fungisnya, kalo thennya tetap yg asli
       .then((res) => `Berhasil: ${res}`)
   }
 
@@ -142,6 +145,9 @@ describe("4. kasus nyata penggunaan mock...", () => {
     if (email) {
       if (isEmail(email)) {
         return await ambilUserFn(email).then((data) => `Email pengguna: ${data.email}`); // dari si mockResolvedValueOnce
+            // nah jadi kan fungsi ambilUserfn ini sudah di mock
+    // lalu ketika di mock maka akan di then disini
+    // ingat yg di mock itu hanya fungisnya, kalo thennya tetap yg asli
       } else {
         return await Promise.reject("email tidak valid");
       }
