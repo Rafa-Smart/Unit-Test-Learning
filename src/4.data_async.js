@@ -15,6 +15,7 @@ export function ngambilData(nama){
 //     return {nama:nama, data:data};
 // }
 
+
 export async function getData(nama, from) {
   try {
     let data = await from();

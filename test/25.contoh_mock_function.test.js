@@ -25,6 +25,9 @@ describe("1. fecth data dari api", () => {
       json: () => Promise.resolve({ id: 5, name: "Rafa Khadafi" }), // gausah pake then(karena udh resolve)
     });
 
+    // jadi ini sebenarnya ga pake Promise.resolve juga bsa, dan kenapa ini bisa
+    // karena fungis async ini meskipun didalamnya ada promise lagi, maka tetap aka di resolve sekali saja
+
     //     fetch(url) // Promise level 1 (mengembalikan Response) // mockResolvedValueOnce
     //         .then(response => response.json()) // Promise level 2 (mengembalikan data) //() => Promise.resolve({id:5, name:"Rafa Khadafi"})
 

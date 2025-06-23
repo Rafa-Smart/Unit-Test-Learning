@@ -28,6 +28,8 @@ describe("test mock impleentation", () => {
         expect(callback.mock.results[1].value).toBe(50); 
         console.log(callback.mock)
     })
+
+    // jadi retults ini adalah yg direturnkan oleh si mocknya
 })
 
     // {

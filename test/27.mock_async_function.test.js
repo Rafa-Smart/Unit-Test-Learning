@@ -46,6 +46,7 @@ test("test async rejected..", () => {
   
   // atau mungkin bisa juga seprti ini
   // expect(getData("Jamal", from)).rejects.toEqual(new Error("Ups error..."));
+  // kalo mau ngetes apakah dia instance error dari error sesuatu maka bisa pake toInstanceOf
 
 });
 

@@ -167,6 +167,11 @@ describe("4. kasus nyata penggunaan mock...", () => {
       .mockResolvedValueOnce({ email: "rafakhadafi1205@gmail.com" }); //ini yg brehaisl
 
     // ini kalo berhasil email valid
+
+    // jadi kita itu hanya memock fungsi ambilUserFn saja, dan ketika di mock 
+    // fungsi ambilUserMOck ini akn ada di fungsi tampilkanUser, nah di fungsi itu akn
+    // si fungsi ambilUsernya di then kan, jadi then ini tetep berfungsi meskipun sudah mi mock fungsi yg di thenkannya
+
     await expect(
       tampilkanUser("rafakhadafi1205@gmail.com", ambilUserMock)
     ).resolves.toEqual("Email pengguna: rafakhadafi1205@gmail.com");

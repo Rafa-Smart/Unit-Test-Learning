@@ -37,6 +37,9 @@ async function array(){
 
 test("testing promise", async () => {
    await expect(hasilPromise()).resolves.toBe("Rafa Khadafi") // ini bisa meski cuma pake fungsi async yang return Rafa Khadafi
+//    await expect(hasilPromise()).rejects.toBe("Rafa Khadafi") //
+// yg itu reject ga bisa, karena defaultnya itu kan resolve, jadi kita mengekstrak nlilai dari si fugsi hasilPromise, dan karea ga di seting
+// maka ini tuh artinya resolves
 
     // berati apapun yang promise kalo kita mau ngecek resolve (hasil) maka pake resolves, dan apapun yang promise kalo kita mau ngecek rejected (gagal) maka pake rejected
 
