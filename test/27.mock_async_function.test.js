@@ -41,6 +41,11 @@ test("test async rejected..", () => {
   // expect(getData("Jamal", from)).rejects.toEqual("Ups error...")
   // itu yg equal ga bisa kaerna dia bener bener ngecek sampe ke dalam objectnya, cek aja snediri ( ga juga sih)
 
+  // ohh jadi kalo misalkan new error(return) / throw error, teap akan ke tangkep sama si 
+  // try and cathcnya, jadi ga cuma throw aja yg ketangkep erronrnya new error juga ketangkep
+
+
+
   expect(getData("Jamal", from)).rejects.toBe("Ups error...");
   // jadi ini tuh udah di try cacth kan lihat aja di filenya data async
   
