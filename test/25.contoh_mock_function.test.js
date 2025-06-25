@@ -31,6 +31,8 @@ describe("1. fecth data dari api", () => {
     //     fetch(url) // Promise level 1 (mengembalikan Response) // mockResolvedValueOnce
     //         .then(response => response.json()) // Promise level 2 (mengembalikan data) //() => Promise.resolve({id:5, name:"Rafa Khadafi"})
 
+    // nah karena di fugis yg async itu jika didalamnya terdapat 2 promise, maka ttap sekali saja resolvenya saja
+
     // jadi di mock functionnya kita mengembalikan return value satu kali
     // yang isinya itu adalah objek response yang isinya ada fungsi json yang mereturnkan data jsonnya yaitu Promise.resolve({id:1, name:"Rafa Khadafi"})
 
