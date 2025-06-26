@@ -1,5 +1,9 @@
 // 1. mock restore
 // Hanya untuk spy (jest.spyOn). Mengembalikan fungsi asli.
+
+// oh jadi unuk jest.spyON ini bisa digunakan di objek literal biasa, dan bukan hanya di class
+
+
 const obj = {
   sayHi: () => 'Hi',
 };
@@ -17,6 +21,7 @@ console.log(obj.sayHi()); // 'Hi' (original restored)
 // Membersihkan riwayat panggilan dan instance, tanpa menghapus implementasi mock.
 
 
+
 const fn = jest.fn().mockReturnValue('Hello');
 
 fn();
@@ -30,6 +35,7 @@ console.log(fn.mock.calls.length); // 0
 
 // 3. mockReset()
 //  Membersihkan semua data + implementasi + return value (lebih agresif dari mockClear).
+
 
 
 const fn2 = jest.fn().mockReturnValue('Hello');

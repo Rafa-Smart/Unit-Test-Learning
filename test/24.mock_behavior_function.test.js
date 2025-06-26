@@ -202,3 +202,7 @@ describe("4. kasus nyata penggunaan mock...", () => {
 
 // jadi inget then itu adalah hasil dari resolve
 // dan catch itu adalaah hasil dari si rejectd
+
+
+
+
