@@ -14,6 +14,7 @@ test('forEach mock function', () => {
   // misal iterasi kedua mockcallback(2)
   // misal iterasi ketiga mockcallback(3)
 
+  
 
     // ngecek kalo callback ini sudah di panggil sebanyak 3 kali,
     // karena pemanggilan di for loopnya

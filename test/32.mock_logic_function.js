@@ -11,7 +11,7 @@ const obj = {
 jest.spyOn(obj, 'sayHi').mockImplementation(() => 'Hello');
 
 console.log(obj.sayHi()); // 'Hello'
-
+// testing aja
 obj.sayHi.mockRestore();
 
 console.log(obj.sayHi()); // 'Hi' (original restored)
