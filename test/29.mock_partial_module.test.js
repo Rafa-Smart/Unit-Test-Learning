@@ -95,6 +95,7 @@ test("testing mock module", () => {
 test.failing("test gagal...", () => {
   const product1 = ProductController.findById(5);
   expect(product1);
+  //ini error karenadefaultnya itu kita set throw error, liat aja di filenya
 });
 
 
